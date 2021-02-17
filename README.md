@@ -3,7 +3,7 @@
 Amostra de REST API contruida em PHP. <br/>
 Usando PDO para manipular banco de dados MySQL.<br/>
 
-Enviar as requisições com seus respectivo corpo(se necessário) para os endereços abaixo para acessar o serviços:
+Enviar as requisições com seus respectivo corpo(se necessário) para os endereços abaixo para acessar os serviços:
 
 ### Corredor:
 ```
