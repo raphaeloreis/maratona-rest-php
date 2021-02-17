@@ -6,7 +6,7 @@ Seguindo a formatação recomendada.<br/>
 A criação do dockerfile não foi efetuada devido ao prazo.<br/>
 
 ## Execução
-Importar o arquivo maratona.sql para o banco de dados mysql e editar a variaveis de conexão no arquivo ``config.php``:
+Importar o arquivo maratona.sql para o banco de dados mysql e editar as variáveis de conexão no arquivo ``config.php``:
 
 ```
 define('DB_NAME', 'maratona');
