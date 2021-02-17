@@ -1,5 +1,5 @@
 <?php
-include 'conexao/Conexao.php';
+include_once 'conexao/Conexao.php';
 
 class Corredor extends Conexao{
 
@@ -7,7 +7,7 @@ class Corredor extends Conexao{
 		
         $sql = "INSERT INTO corredor(nome,cpf,nascimento) VALUES (:nome,:cpf,:nascimento)";
     	$consulta = Conexao::prepare($sql);
-        $consulta->bindValue('nome',  $obj->nome);
+        $consulta->bindValue('nome', $obj->nome);
         $consulta->bindValue('cpf', $obj->cpf);
         $consulta->bindValue('nascimento' , $obj->nascimento);
     	return $consulta->execute();
@@ -16,7 +16,7 @@ class Corredor extends Conexao{
 	public function update($obj,$id = null){
 		$sql = "UPDATE corredor SET nome = :nome, cpf = :cpf, nascimento = :nascimento WHERE id = :id ";
         $consulta = Conexao::prepare($sql);
-        $consulta->bindValue('nome',  $obj->nome);
+        $consulta->bindValue('nome', $obj->nome);
         $consulta->bindValue('cpf', $obj->cpf);
         $consulta->bindValue('nascimento' , $obj->nascimento);
 		$consulta->bindValue('id', $id);
@@ -28,7 +28,7 @@ class Corredor extends Conexao{
 		$consulta = Conexao::prepare($sql);
 		$consulta->bindValue('id',$id);
 		$consulta->execute();
-		return $consulta;
+		return $consulta->execute();
 	}
 
 	public function find($id){
@@ -50,11 +50,19 @@ class Corredor extends Conexao{
 		$a_obj = (array)$obj;
 		foreach ($a_obj as $key => $value) {
 			if (empty($value)) {
-				$validacao['status'] = 'erro';
-				$validacao['dados'] = "Campo $key vazio!";
-				return $validacao;
+				$erro['status'] = 'erro';
+				$erro['dados'] = "Campo $key vazio!";
+				return $erro;
 			}
 		}
+
+		$idade = date_diff(date_create($obj->nascimento), date_create(date("Y-m-d")));
+		if($idade->format('%y') < 18){
+			$erro['status'] = 'erro';
+			$erro['dados'] = "Corredor menor de idade!";
+			return $erro;
+		}
+
 	}
 
 }

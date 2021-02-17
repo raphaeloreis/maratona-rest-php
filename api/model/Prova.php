@@ -1,12 +1,12 @@
 <?php
-include 'conexao/Conexao.php';
+include_once 'conexao/Conexao.php';
 
 class Prova extends Conexao{
 
     public function insert($obj){
     	$sql = "INSERT INTO prova(tipo,data) VALUES (:tipo,:data)";
     	$consulta = Conexao::prepare($sql);
-        $consulta->bindValue('tipo',  $obj->tipo);
+        $consulta->bindValue('tipo', $obj->tipo);
         $consulta->bindValue('data', $obj->data);
     	return $consulta->execute();
 	}
@@ -14,7 +14,7 @@ class Prova extends Conexao{
 	public function update($obj,$id){
 		$sql = "UPDATE prova SET tipo = :tipo, data = :data WHERE id = :id ";
         $consulta = Conexao::prepare($sql);
-        $consulta->bindValue('tipo',  $obj->nome);
+        $consulta->bindValue('tipo', $obj->tipo);
         $consulta->bindValue('data', $obj->data);
 		$consulta->bindValue('id', $id);
 		return $consulta->execute();
@@ -51,6 +51,7 @@ class Prova extends Conexao{
 				return $validacao;
 			}
 		}
+		
 	}
 
 }

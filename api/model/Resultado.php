@@ -1,12 +1,12 @@
 <?php
-include '../../conexao/Conexao.php';
+include 'conexao/Conexao.php';
 
 class Resultado extends Conexao{
 	   
     public function insert($obj){
     	$sql = "INSERT INTO resultado(id_corredor,id_prova,hora_inicio,hora_conclusao) VALUES (:id_corredor, :id_prova, :hora_inicio, :hora_conclusao)";
     	$consulta = Conexao::prepare($sql);
-        $consulta->bindValue('id_corredor',  $obj->id_corredor);
+        $consulta->bindValue('id_corredor', $obj->id_corredor);
         $consulta->bindValue('id_prova', $obj->id_prova);
         $consulta->bindValue('hora_inicio', $obj->hora_inicio);
         $consulta->bindValue('hora_conclusao', $obj->hora_conclusao);
@@ -16,7 +16,7 @@ class Resultado extends Conexao{
 	public function update($obj,$id){
 		$sql = "UPDATE resultado SET id_corredor = :id_corredor, id_prova = :id_prova, hora_inicio = :hora_inicio, hora_conclusao = :hora_conclusao WHERE id = :id ";
         $consulta = Conexao::prepare($sql);
-        $consulta->bindValue('id_corredor',  $obj->nome);
+        $consulta->bindValue('id_corredor', $obj->id_corredor);
         $consulta->bindValue('id_prova', $obj->id_prova);
         $consulta->bindValue('hora_inicio', $obj->hora_inicio);
         $consulta->bindValue('hora_conclusao', $obj->hora_conclusao);
