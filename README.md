@@ -7,7 +7,7 @@ A criação do dockerfile não foi efetuada devido ao prazo.<br/>
 
 ## Execução
 Importar o arquivo maratona.sql para o banco de dados mysql e editar a variaveis de conexão no arquivo ``config.php``:
-<?php
+
 ```
 define('DB_NAME', 'maratona');
 define('DB_HOST', 'localhost');
