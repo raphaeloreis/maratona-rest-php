@@ -34,7 +34,7 @@ cadastrar
     "nascimento": "2000-10-17"
 }
 
-remover todos
+remover id
 // MÉTODO : DELETE api/corredor/:id
 
 atualizar id
@@ -63,7 +63,7 @@ cadastrar
     "data": "2000-10-17"
 }
 
-remover todos
+remover id
 // MÉTODO : DELETE api/prova/:id
 
 atualizar id
@@ -91,7 +91,7 @@ cadastrar
     "id_prova": "1"
 }
 
-remover todos
+remover id
 // MÉTODO : DELETE api/registro/:id
 
 atualizar id
@@ -122,7 +122,7 @@ cadastrar
     "hora_conclusao": "10:25:17"
 }
 
-remover todos
+remover id
 // MÉTODO : DELETE api/resultado/:id
 
 atualizar id
