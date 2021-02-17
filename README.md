@@ -1,7 +1,19 @@
 # Desafio Técnico Deliver IT
 
-Amostra de REST API contruida em PHP. <br/>
+Amostra de REST API construida em PHP. <br/>
 Usando PDO para manipular banco de dados MySQL.<br/>
+Seguindo a formatação recomendada.<br/>
+A criação do dockerfile não foi efetuada devido ao prazo.<br/>
+
+## Execução
+Importar o arquivo maratona.sql para o banco de dados mysql e editar a variaveis de conexão no arquivo ``config.php``:
+<?php
+```
+define('DB_NAME', 'maratona');
+define('DB_HOST', 'localhost');
+define('DB_PASS', '');
+define('DB_USER', 'root');
+```
 
 Enviar as requisições com seus respectivo corpo(se necessário) para os endereços abaixo para acessar os serviços:
 
